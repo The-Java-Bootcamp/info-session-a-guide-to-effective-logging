@@ -8,7 +8,7 @@
 - Implement basic file logging and exception handling
 
 In the world of Java development, effective logging is a crucial skill that separates novice programmers from
-professionals. While many beginners start with System.out.println for debugging, this approach quickly shows its
+professionals. While many beginners start with `System.out.println` for debugging, this approach quickly shows its
 limitations in real-world applications. This info session will guide you from basic println debugging to professional
 logging using Java's `Logger` class, a fundamental tool in every Java developer's toolkit.
 
@@ -251,21 +251,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SLF4JLoggerExample {
-    private static final Logger logger = LoggerFactory.getLogger(SLF4JLoggerExample.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SLF4JLoggerExample.class);
 
     public static void main(String[] args) {
-        logger.info("Application started");
+        LOGGER.info("Application started");
 
         int a = 10, b = 2;
-        logger.debug("Dividing {} by {}", a, b);
+        LOGGER.debug("Dividing {} by {}", a, b);
         try {
             int result = divide(a, b);
-            logger.info("Result: {}", result);
+            LOGGER.info("Result: {}", result);
         } catch (ArithmeticException e) {
-            logger.error("An error occurred during division", e);
+            LOGGER.error("An error occurred during division", e);
         }
 
-        logger.info("Application ended");
+        LOGGER.info("Application ended");
     }
 
     public static int divide(int a, int b) {
